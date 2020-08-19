@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<title>Quote System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<div class="w3-sidebar w3-bar-block w3-light-grey w3-card" style="width:160px">
+    <img src="truck-icon.svg" class="w3-round" alt="truck">
+  <button class="w3-bar-item w3-button tablink" onclick="openCity(event, 'London')">1.Informacion Cliente</button>
+  <button class="w3-bar-item w3-button tablink" onclick="openCity(event, 'Paris')">2.Line Items</button>
+  <button class="w3-bar-item w3-button tablink" onclick="openCity(event, 'Tokyo')">3.Link para Imprimir</button>
+</div>
+
+<div style="margin-left:160px">
+  <div class="w3-padding">Nuvocargo Quote system</div>
+
+  <div id="London" class="w3-container city" style="display:none">
+    <h2>Informacion Cliente</h2>
+    <p>
+        <iframe class="airtable-embed" src="https://airtable.com/embed/shrWYOjsWlIE0NVfn?backgroundColor=green" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+      </p>
+  </div>
+
+  <div id="Paris" class="w3-container city" style="display:none">
+    <h2>Line Items</h2>
+    <p>
+        <iframe class="airtable-embed" src="https://airtable.com/embed/shrGq4fY1pDFLJwz1?backgroundColor=green" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+        
+      </p>
+  </div>
+
+  <div id="Tokyo" class="w3-container city" style="display:none">
+      <h2>Cotizacion</h2>
+      <p>
+        <a href="https://airtable.com/invite/l?inviteId=invrLL3Fvy5Ju6Ddf&inviteToken=cae5355282b26403a88f97c71110019721ccb4e49c41f142d57e63e6f817ae2e">Airtable</a>
+      </p>
+      <p> Abrir blocks buscar cotizacion que quiere imprimir</p>
+  </div>
+
+</div>
+
+<script>
+function openCity(evt, cityName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-red", ""); 
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " w3-red";
+}
+</script>
+
+</body>
+</html>
